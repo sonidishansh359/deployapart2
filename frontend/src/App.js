@@ -20,7 +20,7 @@ function BotPage({ username, onLogout }) {
       const botMessage = { text: response.data.response, sender: 'bot' };
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      const errorMessage = { text: 'Sorry, I couldn\'t process your message right now.', sender: 'bot' };
+      const errorMessage = { text: error.response?.data?.error || 'I apologize, but I\'m experiencing technical difficulties. Please try again later.', sender: 'bot' };
       setMessages(prev => [...prev, errorMessage]);
     }
   };
