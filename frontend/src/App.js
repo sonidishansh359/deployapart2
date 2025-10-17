@@ -12,7 +12,7 @@ function App() {
     e.preventDefault();
     const endpoint = isLogin ? '/login' : '/register';
     try {
-      const response = await axios.post(`http://localhost:5000/api/auth${endpoint}`, {
+      const response = await axios.post(` https://deployapart2-backend.onrender.com/api/auth${endpoint}`, {
         username,
         password,
       });
